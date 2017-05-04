@@ -2,6 +2,10 @@ package edu.uwec.model;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "product")
 public class CandyProduct implements Serializable {
 	static final long serialVersionUID = 1L;
 	private int id;
@@ -20,7 +24,26 @@ public class CandyProduct implements Serializable {
 		return id;
 	}
 	
+	@XmlElement
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	@XmlElement
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public double getPrice() {
+		return price;
+	}
+	
+	@XmlElement
+	public void setPrice(double price) {
+		this.price = price;
 	}
 }

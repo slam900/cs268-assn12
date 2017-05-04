@@ -15,18 +15,18 @@ public class DarioMySQLConnectionManager {
 	//Called by clients to obtain the single database connection
 	public static Connection getConnection() {
 		try {
-			if(conn == null  || conn.isClosed()) {
+			if (conn == null || conn.isClosed()) {
 				Context initContext = new InitialContext();
 				Context envContext  = (Context)initContext.lookup("java:/comp/env");
 				DataSource ds = (DataSource)envContext.lookup("jdbc/dariomysql");
 				conn = ds.getConnection();
 			}
 		} catch (NamingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return conn;
 	}
