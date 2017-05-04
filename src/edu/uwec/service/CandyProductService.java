@@ -18,7 +18,8 @@ public class CandyProductService {
 	
 	@GET
 	@Path("/Products")
-	@Produces(MediaType.APPLICATION_XML)
+	//@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<CandyProduct> getProducts() {
 		List<CandyProduct> products;
 		
