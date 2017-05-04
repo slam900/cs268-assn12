@@ -46,4 +46,9 @@ public class CandyProduct implements Serializable {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
+	@Override
+	public String toString() {
+		return "Candy Product [id=" + id + ", description=" + description + ", price=" + price + "]";
+	}
 }
